@@ -4,7 +4,6 @@
 using namespace std;
 
 #define STRINGIFY(x) #x
-#define MACRO_STRINGIFY(x) STRINGIFY(x)
 
 int add(int i, int j) {
     return i + j;
@@ -43,11 +42,11 @@ py::object ReplaceDoc(py::object f, const std::string& doc_string) {
   return f;
 }
 
-PYBIND11_MODULE(multilang, m) {
+PYBIND11_MODULE(_multilang, m) {
     m.def("_reset_docstr", ReplaceDoc);
 
 #ifdef VERSION_INFO
-    m.attr("__version__") = MACRO_STRINGIFY(VERSION_INFO);
+    m.attr("__version__") = STRINGIFY(VERSION_INFO);
 #else
     m.attr("__version__") = "dev";
 #endif
