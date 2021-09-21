@@ -42,7 +42,7 @@ py::object ReplaceDoc(py::object f, const std::string& doc_string) {
   return f;
 }
 
-PYBIND11_MODULE(_multilang, m) {
+PYBIND11_MODULE(_docreset, m) {
     m.def("_reset_docstr", ReplaceDoc);
 
 #ifdef VERSION_INFO

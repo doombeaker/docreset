@@ -1,4 +1,4 @@
-from ._multilang import _reset_docstr
+from ._docreset import _reset_docstr
 from doctest import DocTestParser, DebugRunner, DocTestRunner
 
 def _test_docstr(docstr, verbose=True, optionflags=0, raise_on_error=True):

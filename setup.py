@@ -28,7 +28,7 @@ class CMakeExtension(Extension):
 class CMakeBuild(build_ext):
     def build_extension(self, ext):
         extdir = os.path.abspath(os.path.dirname(self.get_ext_fullpath(ext.name)))
-        extdir = os.path.join(extdir, "multilang")
+        extdir = os.path.join(extdir, "docreset")
 
         # required for auto-detection & inclusion of auxiliary "native" libs
         if not extdir.endswith(os.path.sep):
@@ -123,15 +123,15 @@ class CMakeBuild(build_ext):
 # The information here can also be placed in setup.cfg - better separation of
 # logic and declaration, and simpler if you include description/version in a file.
 setup(
-    name="multilang",
+    name="docreset",
     version="0.0.1",
     author="doombeaker",
     author_email="later@usopp.net",
     description="Tools for resetting docstr and running doctest meanwhile",
     long_description="",
-    ext_modules=[CMakeExtension("_multilang")],
+    ext_modules=[CMakeExtension("_docreset")],
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
     extras_require={"test": ["pytest"]},
-    packages=["multilang"]
+    packages=["docreset"]
 )
